@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="form-box">
+
+                <h2 class="text-center">
+                    Edit Task
+                </h2>
+
+                <form action="/update-task" method="post">
+
+                    <div class="mb-3">
+
+                        <label>ID</label>
+
+                        <input type="number"
+                               name="id"
+                               class="form-control"
+                               value="<%= singleData.id %>"
+                               readonly>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Name</label>
+
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               value="<%= singleData.name %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Course</label>
+
+                        <input type="text"
+                               name="courseName"
+                               class="form-control"
+                               value="<%= singleData.courseName %>">
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label>Status</label>
+
+                        <select name="status" class="form-control">
+
+                            <option
+                            <%= singleData.status == "Pending" ? "selected" : "" %>>
+                                Pending
+                            </option>
+
+                            <option
+                            <%= singleData.status == "In Progress" ? "selected" : "" %>>
+                                In Progress
+                            </option>
+
+                            <option
+                            <%= singleData.status == "Completed" ? "selected" : "" %>>
+                                Completed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <button class="btn btn-success w-100 py-2">
+                        Update Task
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include('partials/footer') %>
